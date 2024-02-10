@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ticket_booking_1/core/utils/app_styles.dart';
 import 'package:flutter_ticket_booking_1/features/myticket/presentation/cards/ticket_view.dart';
 
+import '../../cards/hotel_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -90,6 +92,33 @@ class HomeScreen extends StatelessWidget {
             ),
 
           ),
+          const SizedBox(height: 20,),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20,),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Hotels', style: AppStyles.headLineStyle2,),
+                InkWell(
+                  child: Text('view all', style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor),),
+                  onTap:() { print('view all clicked'); },
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 20,),
+          const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 20),
+            child: Row(
+              children: [
+                HotelScreen(),
+                HotelScreen(),
+                HotelScreen(),
+              ],
+            ),
+          ),
+
         ],
       ),
     );
