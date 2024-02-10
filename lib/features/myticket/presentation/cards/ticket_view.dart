@@ -12,12 +12,13 @@ class TicketView extends StatelessWidget {
     final size = AppLayout.getSize(context);
 
     return SizedBox(
-      width: size.width,
+      width: size.width*0.85,
       height: 200,
       child: Container(
         margin: const EdgeInsets.only(left: 16),
         child: Column(
           children: [
+            //Showing Blue Card
             Container(
               padding: const EdgeInsets.all(16),
               decoration: const BoxDecoration(
@@ -29,7 +30,6 @@ class TicketView extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  //Showing Blue card
                   Row(
                     children: [
                       Text('NYC', style: AppStyles.headLineStyle3.copyWith(color: Colors.white,),),
@@ -87,7 +87,124 @@ class TicketView extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            //showing Middle split red Card
+            Container(
+              color: AppStyles.orangeColor,
+              child: Row(
+                children: [
+                  SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Expanded(child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: LayoutBuilder(
+                      builder: (BuildContext context, BoxConstraints constraints) {
+                        return Flex(
+                          direction: Axis.horizontal,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          children: List.generate((constraints.constrainWidth()/15).floor(), (index) => const SizedBox(
+                            width: 5, height: 1,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                              ),
+                            ),
+                          )),
+                        );
+                      },
+
+                    ),
+                  )),
+                  SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                        ),
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+
+            ),
+            //Showing red card
+            Container(
+              decoration: BoxDecoration(
+                color: AppStyles.orangeColor,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(21),
+                  bottomRight: Radius.circular(21),
+                ),
+              ),
+              padding: const EdgeInsets.only(left: 16, top: 10, right: 16, bottom: 16),
+              child: Column(
+                children: [
+                  Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          '1 May',
+                          style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                        ),
+                        SizedBox(height: 10,),
+                        Text(
+                          'Date',
+                          style: AppStyles.headLineStyle4.copyWith(color: Colors.white),
+                        )
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '08:00 AM',
+                          style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                        ),
+                        SizedBox(height: 10,),
+                        Text(
+                          'Departure time',
+                          style: AppStyles.headLineStyle4.copyWith(color: Colors.white),
+                        )
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          '23',
+                          style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                        ),
+                        SizedBox(height: 10,),
+                        Text(
+                          'Number',
+                          style: AppStyles.headLineStyle4.copyWith(color: Colors.white),
+                        )
+                      ],
+                    ),
+                  ],
+                )],
+              ),
+            ),
           ],
         ),
       ),
