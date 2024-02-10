@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ticket_booking_1/core/utils/app_info_list.dart';
 import 'package:flutter_ticket_booking_1/core/utils/app_styles.dart';
 import 'package:flutter_ticket_booking_1/features/myticket/presentation/cards/ticket_view.dart';
 
@@ -107,15 +108,11 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20,),
-          const SingleChildScrollView(
+          SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                HotelScreen(),
-                HotelScreen(),
-                HotelScreen(),
-              ],
+              children: hotelList.map((singleHotel) => HotelScreen(hotel: singleHotel)).toList(),
             ),
           ),
 
