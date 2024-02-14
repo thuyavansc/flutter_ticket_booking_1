@@ -5,6 +5,8 @@ import 'package:flutter_ticket_booking_1/core/utils/app_styles.dart';
 import 'package:flutter_ticket_booking_1/features/myticket/presentation/cards/ticket_view.dart';
 
 import '../../cards/hotel_screen.dart';
+import 'package:get/get.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
