@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ticket_booking_1/core/utils/app_info_list.dart';
 import 'package:flutter_ticket_booking_1/core/utils/app_styles.dart';
 import 'package:flutter_ticket_booking_1/features/myticket/presentation/cards/ticket_view.dart';
+import 'package:flutter_ticket_booking_1/features/myticket/presentation/widgets/double_text_widget.dart';
 
 import '../../cards/hotel_screen.dart';
 import 'package:get/get.dart';
@@ -69,16 +70,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Upcoming flights', style: AppStyles.headLineStyle2,),
-                    InkWell(
-                      child: Text('view all', style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor),),
-                      onTap:() { print('view all clicked'); },
-                    )
-                  ],
-                )
+                const AppDoubleTextWidget(bigText: 'Upcoming flights', smallText: 'view all')
               ],
             ),
           ),
