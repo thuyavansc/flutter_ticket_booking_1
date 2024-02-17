@@ -152,9 +152,9 @@ class ProfileScreen extends StatelessWidget {
               color: AppStyles.bgColor,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.shade200,
-                  blurRadius: 5,
-                  spreadRadius: 5,
+                  color: Colors.grey.shade300,
+                  blurRadius: 10,
+                  spreadRadius: 10,
                 )
               ]
             ),
@@ -205,6 +205,7 @@ class ProfileScreen extends StatelessWidget {
                     AppColumnLayout(firstText: 'Bestech', secondText: 'Received from', alignment: CrossAxisAlignment.end, isColor: true,),
                   ],
                 ),
+                const SizedBox(height: 15 ,),
 
               ]
             ),
