@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ticket_booking_1/features/myticket/presentation/pages/home/home_screen.dart';
 import 'package:flutter_ticket_booking_1/features/myticket/presentation/pages/search/search_screen.dart';
 
+import '../pages/profile/profile_screen.dart';
 import '../pages/ticket/ticket_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -18,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const HomeScreen(),
     const SearchScreen(),
     const TicketScreen(),
-    const Text('Profile-Widget'),
+    const ProfileScreen(),
   ];
 
   void _onItemTapped(int index){
