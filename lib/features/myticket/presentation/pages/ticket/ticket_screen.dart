@@ -9,6 +9,7 @@ import 'package:flutter_ticket_booking_1/features/myticket/presentation/widgets/
 
 import '../../widgets/column_layout.dart';
 import '../../widgets/layout_builder_widget.dart';
+import 'package:barcode_widget/barcode_widget.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({super.key});
@@ -86,6 +87,35 @@ class TicketScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              //const SizedBox(height: 25 ,),
+              Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(21),
+                    bottomLeft: Radius.circular(21),
+                  ),
+                ),
+                margin: const EdgeInsets.only(left: 16),
+                padding: const EdgeInsets.only(top: 15, bottom: 15),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: BarcodeWidget(
+                      barcode: Barcode.code128(),
+                      data: 'https://github.com/martinovovo',
+                      drawText: false,
+                      color: AppStyles.textColor,
+                      width: double.infinity,
+                      height: 70,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 25 ,),
+              TicketView(ticket: ticketList[0],),
+
 
             ],
         ),
